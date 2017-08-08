@@ -107,7 +107,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ActorModel\ActorSystemReference.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ActorModel\Actors\StockActor.cs" />
+    <Compile Include="ActorModel\Actors\StockPriceLookupActor.cs" />
+    <Compile Include="ActorModel\Actors\StocksCoordinatorActor.cs" />
+    <Compile Include="ActorModel\Actors\UI\LineChartingActor.cs" />
+    <Compile Include="ActorModel\Actors\UI\StockToggleButtonActor.cs" />
+    <Compile Include="ActorModel\Messages\AddChartSeriesMessage.cs" />
+    <Compile Include="ActorModel\Messages\FlipToggleMessage.cs" />
+    <Compile Include="ActorModel\Messages\RefreshStockPriceMessage.cs" />
+    <Compile Include="ActorModel\Messages\RemoveChartSeriesMessage.cs" />
+    <Compile Include="ActorModel\Messages\StockPriceMessage.cs" />
+    <Compile Include="ActorModel\Messages\SubscribeToNewStockPricesMessage.cs" />
+    <Compile Include="ActorModel\Messages\UnSubscribeFromNewStockPricesMessage.cs" />
+    <Compile Include="ActorModel\Messages\UnWatchStockMessage.cs" />
+    <Compile Include="ActorModel\Messages\UpdatedStockPriceMessage.cs" />
+    <Compile Include="ActorModel\Messages\WatchStockMessage.cs" />
+    <Compile Include="ExternalServices\IStockPriceServiceGateway.cs" />
+    <Compile Include="ExternalServices\RandomStockPriceServiceGateway.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\StockToggleButtonViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -150,10 +168,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ActorModel\Actors\UI\" />
-    <Folder Include="ActorModel\Messages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
